@@ -1,2 +1,2 @@
-# litHTMLBulma
-Bulma component with lit-html integration for easy start project
+# Bulma Web Components
+A simple startor kit with lightweight web components using lit-html, lit-element and Bulma.
