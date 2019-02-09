@@ -1,0 +1,30 @@
+{
+  "name": "yes",
+  "version": "1.0.0",
+  "description": "A simple startor kit with lightweight web components using lit-html, lit-element and Bulma.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prasademc/BulmaWebComponents.git"
+  },
+  "keywords": [
+    "Wweb",
+    "components",
+    "lit-html",
+    "lit-element",
+    "Bulma."
+  ],
+  "author": "Chaminda",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/prasademc/BulmaWebComponents/issues"
+  },
+  "homepage": "https://github.com/prasademc/BulmaWebComponents#readme",
+  "dependencies": {
+    "bulma": "^0.7.4",
+    "lit-element": "^2.0.1"
+  }
+}
