@@ -1,29 +1,25 @@
 import {
     LitElement,
     html
-} from 'lit-element';
+} from '../../lit-element.js';
 
 export class bwcButton extends LitElement {
     static get properties() {
         return {
-            text: {
-                type: String
-            },
-            url: {
-                type: String
-            },
-
+            text: String,
+            url: String
         };
     }
 
     constructor() {
         super();
-        this.text = 'Button Text';
         this.url = 'https://github.com/prasademc/BulmaWebComponents';
     }
 
     render() {
-        return html `<a href="${this.url}">${this.text}!</a>`;
+        return html `<a href="${this.url}">
+            <slot></slot>
+        </a>`;
     }
 }
 
