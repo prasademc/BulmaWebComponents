@@ -1,9 +1,11 @@
 import {
     LitElement,
-    html
+    html, css
 } from '../../lit-element.js';
 
 export class bwcButton extends LitElement {
+    static styles = css`@import url('/src/components/bwc-button/bwc-button.css')`;
+
     static get properties() {
         return {
             text: String,
