@@ -1,29 +1,48 @@
 import {
     LitElement,
-    html
-} from 'lit-element';
+    html, css
+} from '../../lit-element.js';
 
 export class bwcButton extends LitElement {
+    static styles = css`@import url('/src/components/bwc-button/bwc-button.css')`;
+
     static get properties() {
         return {
-            text: {
-                type: String
+            url: String,
+
+            color: {
+                type: String,
+                attribute: true
             },
-            url: {
-                type: String
+            size: {
+                type: String,
+                attribute: true
             },
 
+            fullwidth: { type: Boolean, attribute: true },
+            outlined: { type: Boolean, attribute: true },
+            inverted: { type: Boolean, attribute: true },
+            rounded: { type: Boolean, attribute: true },
+            disabled: { type: Boolean, attribute: true },
         };
     }
 
-    constructor() {
-        super();
-        this.text = 'Button Text';
-        this.url = 'https://github.com/prasademc/BulmaWebComponents';
+    get classNames() {
+        return `
+            ${this.color ? `is-${this.color}` : ''}
+            ${this.size ? `is-${this.size}` : ''}
+            ${this.fullwidth ? 'is-outlined' : ''}
+            ${this.outlined ? 'is-outlined' : ''}
+            ${this.inverted ? 'is-inverted' : ''}
+            ${this.rounded ? 'is-rounded' : ''}
+            ${this.loading ? 'is-loading' : ''}
+        `;
     }
 
     render() {
-        return html `<a href="${this.url}">${this.text}!</a>`;
+        return html`<a class="button ${this.classNames}" ?disabled="${this.disabled}" href="${this.url}">
+    <slot></slot>
+</a>`;
     }
 }
 
